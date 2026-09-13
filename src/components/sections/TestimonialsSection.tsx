@@ -16,7 +16,7 @@ export function TestimonialsSection() {
             <MessageSquare className="w-3.5 h-3.5" />
             <span>ENDORSEMENTS</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
             Client & Leader <span className="text-gradient">Feedback</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">

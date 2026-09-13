@@ -97,15 +97,15 @@ export function HeroSection() {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold glass-panel rounded-2xl hover:bg-slate-200 dark:hover:bg-slate-800 hover:scale-[1.02] active:scale-[0.98] transition-all w-full sm:w-auto text-slate-800 dark:text-slate-100"
+                className="flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold glass-panel rounded-2xl border border-border/80 hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-[1.02] active:scale-[0.98] transition-all w-full sm:w-auto text-slate-800 dark:text-slate-100"
               >
-                <FileText className="w-4 h-4 text-blue-500" />
+                <FileText className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 <span>Download Resume</span>
               </a>
 
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-slate-700 dark:text-slate-300 hover:text-blue-500 transition-colors w-full sm:w-auto"
+                className="flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold rounded-2xl border border-transparent hover:border-border hover:bg-slate-100/70 dark:hover:bg-slate-800/60 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-sky-400 transition-all w-full sm:w-auto"
               >
                 <Send className="w-4 h-4" />
                 <span>Let&apos;s Connect</span>
@@ -114,32 +114,32 @@ export function HeroSection() {
 
             {/* Key Metric Highlights Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full pt-6 border-t border-border/60">
-              <div>
-                <span className="block text-2xl sm:text-3xl font-extrabold text-blue-600 dark:text-sky-400">
+              <div className="p-3 sm:p-0 rounded-2xl sm:rounded-none bg-slate-100/50 sm:bg-transparent dark:bg-slate-800/30 sm:dark:bg-transparent border border-border/40 sm:border-0">
+                <span className="block text-xl sm:text-2xl lg:text-3xl font-extrabold text-blue-600 dark:text-sky-400">
                   {PERSONAL_INFO.stats.yearsLearning}
                 </span>
                 <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
                   Hands-on Exp
                 </span>
               </div>
-              <div>
-                <span className="block text-2xl sm:text-3xl font-extrabold text-blue-600 dark:text-sky-400">
+              <div className="p-3 sm:p-0 rounded-2xl sm:rounded-none bg-slate-100/50 sm:bg-transparent dark:bg-slate-800/30 sm:dark:bg-transparent border border-border/40 sm:border-0">
+                <span className="block text-xl sm:text-2xl lg:text-3xl font-extrabold text-blue-600 dark:text-sky-400">
                   {PERSONAL_INFO.stats.projectsCompleted}
                 </span>
                 <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
                   Projects Built
                 </span>
               </div>
-              <div>
-                <span className="block text-2xl sm:text-3xl font-extrabold text-blue-600 dark:text-sky-400">
+              <div className="p-3 sm:p-0 rounded-2xl sm:rounded-none bg-slate-100/50 sm:bg-transparent dark:bg-slate-800/30 sm:dark:bg-transparent border border-border/40 sm:border-0">
+                <span className="block text-xl sm:text-2xl lg:text-3xl font-extrabold text-blue-600 dark:text-sky-400">
                   {PERSONAL_INFO.stats.technologiesMastered}
                 </span>
                 <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
                   Tech Skills
                 </span>
               </div>
-              <div>
-                <span className="block text-2xl sm:text-3xl font-extrabold text-blue-600 dark:text-sky-400 truncate">
+              <div className="p-3 sm:p-0 rounded-2xl sm:rounded-none bg-slate-100/50 sm:bg-transparent dark:bg-slate-800/30 sm:dark:bg-transparent border border-border/40 sm:border-0">
+                <span className="block text-xl sm:text-2xl lg:text-3xl font-extrabold text-blue-600 dark:text-sky-400 whitespace-nowrap">
                   {PERSONAL_INFO.stats.domainExperience}
                 </span>
                 <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
@@ -165,12 +165,12 @@ export function HeroSection() {
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -top-4 -left-4 glass-panel p-3.5 rounded-2xl flex items-center gap-3 border border-blue-500/30 shadow-xl hidden sm:flex"
             >
-              <div className="p-2 bg-blue-600/20 text-blue-400 rounded-xl">
+              <div className="p-2 bg-blue-600/15 dark:bg-blue-600/20 text-blue-600 dark:text-blue-400 rounded-xl">
                 <Bot className="w-5 h-5" />
               </div>
               <div>
-                <span className="block text-xs font-bold text-slate-800 dark:text-white">ResumeIQ AI</span>
-                <span className="text-[10px] text-emerald-400 font-mono">Google Gemini API • Active</span>
+                <span className="block text-xs font-bold text-slate-900 dark:text-white">ResumeIQ AI</span>
+                <span className="text-[10px] text-emerald-600 dark:text-emerald-400 font-mono font-medium">Google Gemini API • Active</span>
               </div>
             </motion.div>
 
@@ -179,12 +179,12 @@ export function HeroSection() {
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -bottom-4 -right-4 glass-panel p-3.5 rounded-2xl flex items-center gap-3 border border-sky-500/30 shadow-xl hidden sm:flex"
             >
-              <div className="p-2 bg-sky-500/20 text-sky-400 rounded-xl">
+              <div className="p-2 bg-sky-500/15 dark:bg-sky-500/20 text-sky-600 dark:text-sky-400 rounded-xl">
                 <Smartphone className="w-5 h-5" />
               </div>
               <div>
-                <span className="block text-xs font-bold text-slate-800 dark:text-white">Space Escape Runner</span>
-                <span className="text-[10px] text-sky-400 font-mono">React Native + Expo • 60 FPS</span>
+                <span className="block text-xs font-bold text-slate-900 dark:text-white">Space Escape Runner</span>
+                <span className="text-[10px] text-sky-600 dark:text-sky-400 font-mono font-medium">React Native + Expo • 60 FPS</span>
               </div>
             </motion.div>
           </motion.div>

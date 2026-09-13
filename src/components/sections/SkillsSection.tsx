@@ -81,7 +81,7 @@ export function SkillsSection() {
             <Cpu className="w-3.5 h-3.5" />
             <span>TECHNICAL PROFICIENCY</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
             Skills & <span className="text-gradient">Technologies</span>
           </h2>
           <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
@@ -98,7 +98,7 @@ export function SkillsSection() {
               className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-300 ${
                 activeCategory === idx
                   ? "bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-500 text-white shadow-lg shadow-blue-500/25 scale-[1.02]"
-                  : "glass-panel text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800"
+                  : "glass-panel border border-border/80 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
               }`}
             >
               {cat.title}
@@ -107,7 +107,7 @@ export function SkillsSection() {
         </div>
 
         {/* Category Description */}
-        <p className="text-center text-xs font-mono uppercase tracking-widest text-slate-400 mb-8">
+        <p className="text-center text-xs font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-8 font-medium">
           {SKILL_CATEGORIES[activeCategory].description}
         </p>
 
@@ -122,11 +122,11 @@ export function SkillsSection() {
           {SKILL_CATEGORIES[activeCategory].skills.map((skill) => (
             <div
               key={skill.name}
-              className="group glass-panel p-6 rounded-3xl relative hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 flex flex-col justify-between"
+              className="group glass-panel p-6 rounded-3xl relative border border-border/80 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="p-3 bg-slate-100 dark:bg-slate-800/80 rounded-2xl group-hover:scale-110 transition-transform">
+                  <div className="p-3 bg-blue-500/10 dark:bg-slate-800/80 rounded-2xl group-hover:scale-110 transition-transform">
                     {ICON_MAP[skill.icon] || <Cpu className="w-5 h-5 text-blue-500" />}
                   </div>
                   <span className="text-xs font-bold font-mono text-blue-600 dark:text-sky-400">
@@ -137,7 +137,7 @@ export function SkillsSection() {
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
                   {skill.name}
                 </h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
                   {skill.description}
                 </p>
               </div>

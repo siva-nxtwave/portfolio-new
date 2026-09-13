@@ -43,29 +43,29 @@ export function BackgroundSystem() {
       {/* Hardware-Accelerated Mouse Spotlight */}
       <div
         ref={spotlightRef}
-        className="absolute w-[500px] h-[500px] rounded-full blur-[90px] opacity-25 bg-gradient-to-tr from-blue-600 via-sky-400 to-cyan-400"
+        className="absolute w-[500px] h-[500px] rounded-full blur-[90px] opacity-15 dark:opacity-25 bg-gradient-to-tr from-blue-600 via-sky-400 to-cyan-400"
         style={{ willChange: "transform", transform: "translate3d(-500px, -500px, 0)" }}
       />
 
       {/* Static Ambient Glow Orbs with Optimized Hardware Acceleration */}
       <div
-        className="absolute top-[8%] left-[8%] w-[380px] h-[380px] rounded-full bg-blue-600/10 blur-[80px]"
+        className="absolute top-[8%] left-[8%] w-[380px] h-[380px] rounded-full bg-blue-500/8 dark:bg-blue-600/10 blur-[80px]"
         style={{ willChange: "opacity" }}
       />
       <div
-        className="absolute top-[45%] right-[6%] w-[420px] h-[420px] rounded-full bg-sky-500/10 blur-[90px]"
+        className="absolute top-[45%] right-[6%] w-[420px] h-[420px] rounded-full bg-sky-500/8 dark:bg-sky-500/10 blur-[90px]"
         style={{ willChange: "opacity" }}
       />
       <div
-        className="absolute bottom-[12%] left-[15%] w-[350px] h-[350px] rounded-full bg-cyan-500/10 blur-[80px]"
+        className="absolute bottom-[12%] left-[15%] w-[350px] h-[350px] rounded-full bg-cyan-500/8 dark:bg-cyan-500/10 blur-[80px]"
         style={{ willChange: "opacity" }}
       />
 
       {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-30 dark:opacity-20" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 dark:opacity-20" />
 
       {/* Subtle Radial Gradient Overlay */}
-      <div className="absolute inset-0 bg-radial from-transparent via-background/60 to-background" />
+      <div className="absolute inset-0 bg-radial from-transparent via-background/70 to-background" />
     </div>
   );
 }

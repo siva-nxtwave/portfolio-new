@@ -18,25 +18,25 @@ import {
 } from "lucide-react";
 
 const TECH_ITEMS = [
-  { name: "Python", icon: <Code2 className="w-5 h-5 text-blue-400" /> },
-  { name: "JavaScript", icon: <FileCode className="w-5 h-5 text-amber-400" /> },
-  { name: "React", icon: <Globe className="w-5 h-5 text-cyan-400" /> },
-  { name: "React Native", icon: <Smartphone className="w-5 h-5 text-sky-400" /> },
-  { name: "Node.js", icon: <Server className="w-5 h-5 text-emerald-400" /> },
-  { name: "Express.js", icon: <Server className="w-5 h-5 text-slate-300" /> },
-  { name: "Google Gemini API", icon: <Sparkles className="w-5 h-5 text-blue-400" /> },
-  { name: "SQL", icon: <Database className="w-5 h-5 text-indigo-400" /> },
-  { name: "HTML5 & CSS3", icon: <Layout className="w-5 h-5 text-orange-400" /> },
-  { name: "Expo", icon: <Zap className="w-5 h-5 text-violet-400" /> },
-  { name: "Vercel & Render", icon: <Cloud className="w-5 h-5 text-cyan-400" /> },
-  { name: "PDF Parsing / Multer", icon: <BookOpen className="w-5 h-5 text-emerald-400" /> },
+  { name: "Python", icon: <Code2 className="w-5 h-5 text-blue-500 dark:text-blue-400" /> },
+  { name: "JavaScript", icon: <FileCode className="w-5 h-5 text-amber-500 dark:text-amber-400" /> },
+  { name: "React", icon: <Globe className="w-5 h-5 text-cyan-500 dark:text-cyan-400" /> },
+  { name: "React Native", icon: <Smartphone className="w-5 h-5 text-sky-500 dark:text-sky-400" /> },
+  { name: "Node.js", icon: <Server className="w-5 h-5 text-emerald-500 dark:text-emerald-400" /> },
+  { name: "Express.js", icon: <Server className="w-5 h-5 text-slate-600 dark:text-slate-300" /> },
+  { name: "Google Gemini API", icon: <Sparkles className="w-5 h-5 text-blue-500 dark:text-blue-400" /> },
+  { name: "SQL", icon: <Database className="w-5 h-5 text-indigo-500 dark:text-indigo-400" /> },
+  { name: "HTML5 & CSS3", icon: <Layout className="w-5 h-5 text-orange-500 dark:text-orange-400" /> },
+  { name: "Expo", icon: <Zap className="w-5 h-5 text-violet-500 dark:text-violet-400" /> },
+  { name: "Vercel & Render", icon: <Cloud className="w-5 h-5 text-cyan-500 dark:text-cyan-400" /> },
+  { name: "PDF Parsing / Multer", icon: <BookOpen className="w-5 h-5 text-emerald-500 dark:text-emerald-400" /> },
 ];
 
 export function TrustedTechnologiesSection() {
   return (
-    <section className="py-12 relative z-10 border-y border-border/40 bg-slate-50/50 dark:bg-slate-900/20 overflow-hidden">
+    <section className="py-12 relative z-10 border-y border-border bg-slate-100/40 dark:bg-slate-900/30 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 mb-6 text-center">
-        <span className="text-[11px] font-mono uppercase tracking-widest text-slate-400">
+        <span className="text-[11px] font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 font-semibold">
           CORE TECH STACK & PLATFORMS
         </span>
       </div>
@@ -54,7 +54,7 @@ export function TrustedTechnologiesSection() {
           {[...TECH_ITEMS, ...TECH_ITEMS].map((tech, idx) => (
             <div
               key={idx}
-              className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl glass-panel border border-border/60 hover:border-blue-500/40 hover:scale-105 transition-all shadow-sm"
+              className="inline-flex items-center gap-3 px-5 py-3 rounded-2xl glass-panel border border-border/80 hover:border-blue-500/50 hover:scale-105 transition-all shadow-sm"
             >
               {tech.icon}
               <span className="text-xs font-semibold text-slate-800 dark:text-slate-200">

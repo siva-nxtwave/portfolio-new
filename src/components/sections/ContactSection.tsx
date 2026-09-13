@@ -75,7 +75,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 relative z-10 bg-slate-50/50 dark:bg-slate-900/30">
+    <section id="contact" className="py-24 relative z-10 bg-slate-100/40 dark:bg-slate-900/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -84,10 +84,10 @@ export function ContactSection() {
             <Mail className="w-3.5 h-3.5" />
             <span>LET&apos;S CONNECT</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
             Get In <span className="text-gradient">Touch</span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
+          <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg">
             Have a software engineering opportunity, full-stack project, or collaboration inquiry? Drop a message!
           </p>
         </div>
@@ -103,20 +103,20 @@ export function ContactSection() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-5 space-y-6"
           >
-            <div className="glass-panel p-8 rounded-3xl space-y-6">
+            <div className="glass-panel p-6 sm:p-8 rounded-3xl space-y-6 border border-border/80">
               <h3 className="text-xl font-bold text-slate-900 dark:text-white">Contact Information</h3>
 
               {/* Email item with copy button */}
-              <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-800/80 flex items-center justify-between">
+              <div className="p-4 rounded-2xl bg-slate-100/90 dark:bg-slate-800/80 border border-border/50 flex items-center justify-between">
                 <div className="flex items-center gap-3 overflow-hidden">
-                  <div className="p-2.5 bg-blue-600/10 text-blue-500 rounded-xl shrink-0">
+                  <div className="p-2.5 bg-blue-600/10 text-blue-600 dark:text-blue-400 rounded-xl shrink-0">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div className="overflow-hidden">
-                    <span className="block text-[10px] uppercase font-mono text-slate-400">Direct Email</span>
+                    <span className="block text-[10px] uppercase font-mono text-slate-500 dark:text-slate-400 font-medium">Direct Email</span>
                     <a
                       href={`mailto:${PERSONAL_INFO.email}`}
-                      className="text-xs font-semibold text-slate-900 dark:text-white truncate block hover:text-blue-500 transition-colors"
+                      className="text-xs font-semibold text-slate-900 dark:text-white truncate block hover:text-blue-600 dark:hover:text-sky-400 transition-colors"
                     >
                       {PERSONAL_INFO.email}
                     </a>
@@ -125,24 +125,24 @@ export function ContactSection() {
 
                 <button
                   onClick={handleCopyEmail}
-                  className="p-2 rounded-xl glass-panel hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-slate-600 dark:text-slate-300 shrink-0"
+                  className="p-2 rounded-xl glass-panel border border-border/60 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-slate-600 dark:text-slate-300 shrink-0"
                   title="Copy email address"
                 >
-                  {copiedEmail ? <CheckCircle2 className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                  {copiedEmail ? <CheckCircle2 className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
                 </button>
               </div>
 
               {/* Phone item with copy button */}
-              <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-800/80 flex items-center justify-between">
+              <div className="p-4 rounded-2xl bg-slate-100/90 dark:bg-slate-800/80 border border-border/50 flex items-center justify-between">
                 <div className="flex items-center gap-3 overflow-hidden">
-                  <div className="p-2.5 bg-sky-500/10 text-sky-500 rounded-xl shrink-0">
+                  <div className="p-2.5 bg-sky-500/10 text-sky-600 dark:text-sky-400 rounded-xl shrink-0">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div className="overflow-hidden">
-                    <span className="block text-[10px] uppercase font-mono text-slate-400">Phone Number</span>
+                    <span className="block text-[10px] uppercase font-mono text-slate-500 dark:text-slate-400 font-medium">Phone Number</span>
                     <a
                       href={`tel:${PERSONAL_INFO.phone}`}
-                      className="text-xs font-semibold text-slate-900 dark:text-white truncate block hover:text-blue-500 transition-colors"
+                      className="text-xs font-semibold text-slate-900 dark:text-white truncate block hover:text-blue-600 dark:hover:text-sky-400 transition-colors"
                     >
                       {PERSONAL_INFO.phoneDisplay}
                     </a>
@@ -151,38 +151,38 @@ export function ContactSection() {
 
                 <button
                   onClick={handleCopyPhone}
-                  className="p-2 rounded-xl glass-panel hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-slate-600 dark:text-slate-300 shrink-0"
+                  className="p-2 rounded-xl glass-panel border border-border/60 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors text-slate-600 dark:text-slate-300 shrink-0"
                   title="Copy phone number"
                 >
-                  {copiedPhone ? <CheckCircle2 className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
+                  {copiedPhone ? <CheckCircle2 className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
                 </button>
               </div>
 
               {/* Location */}
-              <div className="p-4 rounded-2xl bg-slate-100 dark:bg-slate-800/80 flex items-center gap-3">
-                <div className="p-2.5 bg-emerald-500/10 text-emerald-500 rounded-xl shrink-0">
+              <div className="p-4 rounded-2xl bg-slate-100/90 dark:bg-slate-800/80 border border-border/50 flex items-center gap-3">
+                <div className="p-2.5 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-xl shrink-0">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="block text-[10px] uppercase font-mono text-slate-400">Base Location</span>
+                  <span className="block text-[10px] uppercase font-mono text-slate-500 dark:text-slate-400 font-medium">Base Location</span>
                   <span className="text-xs font-semibold text-slate-900 dark:text-white">{PERSONAL_INFO.location}</span>
                 </div>
               </div>
 
               {/* Availability status */}
-              <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 flex items-center gap-3">
-                <div className="p-2.5 bg-emerald-500/20 text-emerald-400 rounded-xl shrink-0">
+              <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-3">
+                <div className="p-2.5 bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 rounded-xl shrink-0">
                   <Clock className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="block text-[10px] uppercase font-mono text-emerald-400 font-bold">Current Availability</span>
+                  <span className="block text-[10px] uppercase font-mono text-emerald-600 dark:text-emerald-400 font-bold">Current Availability</span>
                   <span className="text-xs font-medium text-slate-800 dark:text-slate-200">Open for Software Developer & Full-Stack Roles</span>
                 </div>
               </div>
 
               {/* Social Channels */}
               <div className="pt-4 border-t border-border/40">
-                <span className="block text-xs font-mono text-slate-400 uppercase tracking-widest mb-3">
+                <span className="block text-xs font-mono text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-3 font-semibold">
                   Online Profiles
                 </span>
                 <div className="flex items-center gap-3">
@@ -190,7 +190,7 @@ export function ContactSection() {
                     href={PERSONAL_INFO.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-2xl glass-panel hover:text-blue-500 hover:scale-105 transition-all"
+                    className="p-3 rounded-2xl glass-panel border border-border/80 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-sky-400 hover:scale-105 transition-all"
                     title="GitHub"
                   >
                     <Globe className="w-5 h-5" />
@@ -199,14 +199,14 @@ export function ContactSection() {
                     href={PERSONAL_INFO.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-2xl glass-panel hover:text-blue-500 hover:scale-105 transition-all"
+                    className="p-3 rounded-2xl glass-panel border border-border/80 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-sky-400 hover:scale-105 transition-all"
                     title="LinkedIn"
                   >
                     <Share2 className="w-5 h-5" />
                   </a>
                   <a
                     href={`mailto:${PERSONAL_INFO.email}`}
-                    className="p-3 rounded-2xl glass-panel hover:text-sky-400 hover:scale-105 transition-all"
+                    className="p-3 rounded-2xl glass-panel border border-border/80 text-slate-700 dark:text-slate-300 hover:text-sky-500 hover:scale-105 transition-all"
                     title="Email Direct"
                   >
                     <Mail className="w-5 h-5" />
@@ -224,7 +224,7 @@ export function ContactSection() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-7"
           >
-            <div className="glass-panel p-8 rounded-3xl relative">
+            <div className="glass-panel p-6 sm:p-8 rounded-3xl relative border border-border/80">
               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                 <span>Send a Direct Message</span>
                 <Sparkles className="w-4 h-4 text-sky-400" />
@@ -232,7 +232,7 @@ export function ContactSection() {
 
               {submitted ? (
                 <div className="p-8 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center space-y-3">
-                  <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto animate-bounce" />
+                  <CheckCircle2 className="w-12 h-12 text-emerald-500 dark:text-emerald-400 mx-auto animate-bounce" />
                   <h4 className="text-xl font-bold text-slate-900 dark:text-white">Message Sent Successfully!</h4>
                   <p className="text-xs text-slate-600 dark:text-slate-300">
                     Thank you for reaching out. Karthikeyan A will respond to your message promptly.
@@ -243,17 +243,17 @@ export function ContactSection() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     {/* Name */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                      <label className="block text-xs font-semibold text-slate-800 dark:text-slate-200 mb-1.5">
                         Your Name
                       </label>
                       <input
                         {...register("name")}
                         type="text"
                         placeholder="Your Name"
-                        className="w-full px-4 py-3 rounded-2xl glass-panel text-xs border border-border focus:outline-none focus:border-blue-500 transition-colors"
+                        className="w-full px-4 py-3 rounded-2xl bg-white/80 dark:bg-slate-900/70 text-xs border border-border text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/20 transition-all"
                       />
                       {errors.name && (
-                        <span className="text-[10px] text-red-400 font-mono mt-1 block">
+                        <span className="text-[10px] text-red-500 dark:text-red-400 font-mono mt-1 block">
                           {errors.name.message}
                         </span>
                       )}
@@ -261,17 +261,17 @@ export function ContactSection() {
 
                     {/* Email */}
                     <div>
-                      <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                      <label className="block text-xs font-semibold text-slate-800 dark:text-slate-200 mb-1.5">
                         Email Address
                       </label>
                       <input
                         {...register("email")}
                         type="email"
                         placeholder="you@company.com"
-                        className="w-full px-4 py-3 rounded-2xl glass-panel text-xs border border-border focus:outline-none focus:border-blue-500 transition-colors"
+                        className="w-full px-4 py-3 rounded-2xl bg-white/80 dark:bg-slate-900/70 text-xs border border-border text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/20 transition-all"
                       />
                       {errors.email && (
-                        <span className="text-[10px] text-red-400 font-mono mt-1 block">
+                        <span className="text-[10px] text-red-500 dark:text-red-400 font-mono mt-1 block">
                           {errors.email.message}
                         </span>
                       )}
@@ -280,17 +280,17 @@ export function ContactSection() {
 
                   {/* Subject */}
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-800 dark:text-slate-200 mb-1.5">
                       Subject
                     </label>
                     <input
                       {...register("subject")}
                       type="text"
                       placeholder="Software Developer Opportunity / Project Inquiry"
-                      className="w-full px-4 py-3 rounded-2xl glass-panel text-xs border border-border focus:outline-none focus:border-blue-500 transition-colors"
+                      className="w-full px-4 py-3 rounded-2xl bg-white/80 dark:bg-slate-900/70 text-xs border border-border text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/20 transition-all"
                     />
                     {errors.subject && (
-                      <span className="text-[10px] text-red-400 font-mono mt-1 block">
+                      <span className="text-[10px] text-red-500 dark:text-red-400 font-mono mt-1 block">
                         {errors.subject.message}
                       </span>
                     )}
@@ -298,17 +298,17 @@ export function ContactSection() {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1.5">
+                    <label className="block text-xs font-semibold text-slate-800 dark:text-slate-200 mb-1.5">
                       Your Message
                     </label>
                     <textarea
                       {...register("message")}
                       rows={5}
                       placeholder="Hi Karthikeyan, I saw your ResumeIQ AI project and would love to connect regarding an opportunity..."
-                      className="w-full px-4 py-3 rounded-2xl glass-panel text-xs border border-border focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                      className="w-full px-4 py-3 rounded-2xl bg-white/80 dark:bg-slate-900/70 text-xs border border-border text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/20 transition-all resize-none"
                     />
                     {errors.message && (
-                      <span className="text-[10px] text-red-400 font-mono mt-1 block">
+                      <span className="text-[10px] text-red-500 dark:text-red-400 font-mono mt-1 block">
                         {errors.message.message}
                       </span>
                     )}
