@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
-import { GitBranch, Star, GitFork, Code2, Flame } from "lucide-react";
+import { GitBranch, Flame } from "lucide-react";
 
 
 const TOP_LANGUAGES = [
@@ -14,8 +13,8 @@ const TOP_LANGUAGES = [
 
 export function GithubSection() {
   // Generate mock GitHub heatmap matrix (52 weeks x 7 days)
-  const weeks = Array.from({ length: 32 }, (_, w) =>
-    Array.from({ length: 7 }, (_, d) => {
+  const weeks = Array.from({ length: 32 }, () =>
+    Array.from({ length: 7 }, () => {
       const level = Math.floor(Math.random() * 5); // 0 to 4
       return level;
     })

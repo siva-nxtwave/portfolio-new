@@ -98,7 +98,7 @@ export function Hero3DCanvas() {
   }, []);
 
   return (
-    <div ref={containerRef} className="w-full h-[420px] sm:h-[500px] relative">
+    <div ref={containerRef} className="w-full h-[300px] xs:h-[360px] sm:h-[440px] lg:h-[500px] relative">
       <Canvas
         camera={{ position: [0, 0, 5], fov: 60 }}
         className="w-full h-full"

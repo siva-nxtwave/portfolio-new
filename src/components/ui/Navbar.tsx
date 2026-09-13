@@ -1,9 +1,12 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sun, Moon, FileText, Menu, X, Cpu, ArrowUpRight } from "lucide-react";
+import { Sun, Moon, FileText, Menu, X, ArrowUpRight } from "lucide-react";
+
+const emptySubscribe = () => () => {};
 
 const NAV_ITEMS = [
   { name: "Home", href: "#home" },
@@ -17,14 +20,16 @@ const NAV_ITEMS = [
 
 export function Navbar() {
   const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false
+  );
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-
     let ticking = false;
 
     const onScroll = () => {
@@ -61,8 +66,15 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <a href="#home" className="flex items-center gap-2.5 group">
-          <div className="p-2 rounded-xl bg-blue-600/10 border border-blue-500/30 text-blue-600 dark:text-blue-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-            <Cpu className="w-5 h-5" />
+          <div className="relative w-9 h-9 rounded-xl overflow-hidden shadow-sm group-hover:scale-105 transition-transform duration-300 border border-blue-500/30">
+            <Image
+              src="/logo.png"
+              alt="Karthikeyan A"
+              width={36}
+              height={36}
+              priority
+              className="w-full h-full object-cover"
+            />
           </div>
           <div className="flex flex-col">
             <span className="font-bold text-lg tracking-tight text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-sky-400 transition-colors">
@@ -99,13 +111,13 @@ export function Navbar() {
           })}
         </nav>
 
-        {/* Actions (Resume & Theme Toggle) */}
-        <div className="hidden sm:flex items-center gap-3">
+        {/* Desktop Actions (Resume & Theme Toggle) */}
+        <div className="hidden lg:flex items-center gap-3">
           {/* Theme Switcher */}
           {mounted && (
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2.5 rounded-full glass-panel hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-300"
+              className="p-2.5 rounded-full glass-panel hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-blue-600" />}
@@ -117,7 +129,7 @@ export function Navbar() {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-500 rounded-full shadow-md shadow-blue-500/20 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all"
+            className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-500 rounded-full shadow-md shadow-blue-500/20 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
           >
             <FileText className="w-3.5 h-3.5" />
             <span>Resume</span>
@@ -125,22 +137,36 @@ export function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Hamburger Menu Toggle */}
-        <div className="flex sm:hidden items-center gap-2">
+        {/* Mobile & Tablet Toggle Controls (< 1024px) */}
+        <div className="flex lg:hidden items-center gap-2">
+          {/* Tablet Resume CTA */}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-500 rounded-full shadow-md shadow-blue-500/20 hover:shadow-blue-500/40 transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+          >
+            <FileText className="w-3.5 h-3.5" />
+            <span>Resume</span>
+          </a>
+
+          {/* Theme Switcher */}
           {mounted && (
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-full glass-panel hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="p-2.5 rounded-full glass-panel hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-blue-600" />}
             </button>
           )}
 
+          {/* Hamburger Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-xl glass-panel text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+            className="p-2.5 rounded-xl glass-panel text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
             aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -164,7 +190,7 @@ export function Navbar() {
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`text-sm font-medium py-2.5 px-3.5 rounded-xl transition-colors flex items-center justify-between ${
+                    className={`text-sm font-medium py-2.5 px-3.5 min-h-[44px] rounded-xl transition-colors flex items-center justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                       isActive
                         ? "bg-blue-500/10 text-blue-600 dark:text-sky-400 font-semibold"
                         : "text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800/80"

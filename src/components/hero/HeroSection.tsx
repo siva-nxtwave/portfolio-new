@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Sparkles, ArrowRight, FileText, Send, Terminal, Bot, Cpu, Smartphone } from "lucide-react";
+import { ArrowRight, FileText, Send, Bot, Smartphone } from "lucide-react";
 import { PERSONAL_INFO } from "@/lib/data";
 import { Hero3DCanvas } from "./Hero3DCanvas";
 
@@ -42,9 +42,9 @@ export function HeroSection() {
   }, [displayText, isDeleting, phraseIndex]);
 
   return (
-    <section id="home" className="relative min-h-screen pt-28 pb-16 flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-[calc(100vh-4rem)] pt-24 sm:pt-28 pb-12 sm:pb-16 flex items-center justify-center overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Hero Content Column */}
           <motion.div
@@ -65,29 +65,29 @@ export function HeroSection() {
             </div>
 
             {/* Greeting & Main Title */}
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-4">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-4">
               Hello, I&apos;m <br />
               <span className="text-gradient">{PERSONAL_INFO.name}</span>
             </h1>
 
             {/* Dynamic Typing Title */}
             <div className="h-10 sm:h-12 flex items-center mb-6">
-              <p className="text-lg sm:text-2xl font-mono text-blue-500 dark:text-sky-400 font-semibold">
+              <p className="text-base sm:text-xl lg:text-2xl font-mono text-blue-500 dark:text-sky-400 font-semibold">
                 &gt; {displayText}
                 <span className="animate-pulse">|</span>
               </p>
             </div>
 
             {/* Sub-headline description */}
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mb-8">
+            <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mb-8">
               {PERSONAL_INFO.tagline}
             </p>
 
             {/* Call to Actions */}
-            <div className="flex flex-wrap items-center gap-4 mb-12 w-full sm:w-auto">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-10 sm:mb-12 w-full sm:w-auto">
               <a
                 href="#projects"
-                className="flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-500 rounded-2xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all w-full sm:w-auto"
+                className="flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-500 rounded-2xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               >
                 <span>View Projects</span>
                 <ArrowRight className="w-4 h-4" />
@@ -97,7 +97,7 @@ export function HeroSection() {
                 href="/resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold glass-panel rounded-2xl border border-border/80 hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-[1.02] active:scale-[0.98] transition-all w-full sm:w-auto text-slate-800 dark:text-slate-100"
+                className="flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold glass-panel rounded-2xl border border-border/80 hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-[1.02] active:scale-[0.98] transition-all w-full sm:w-auto text-slate-800 dark:text-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               >
                 <FileText className="w-4 h-4 text-blue-600 dark:text-blue-400" />
                 <span>Download Resume</span>
@@ -105,7 +105,7 @@ export function HeroSection() {
 
               <a
                 href="#contact"
-                className="flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold rounded-2xl border border-transparent hover:border-border hover:bg-slate-100/70 dark:hover:bg-slate-800/60 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-sky-400 transition-all w-full sm:w-auto"
+                className="flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold rounded-2xl border border-transparent hover:border-border hover:bg-slate-100/70 dark:hover:bg-slate-800/60 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-sky-400 transition-all w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
               >
                 <Send className="w-4 h-4" />
                 <span>Let&apos;s Connect</span>
@@ -113,7 +113,7 @@ export function HeroSection() {
             </div>
 
             {/* Key Metric Highlights Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full pt-6 border-t border-border/60">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 w-full pt-6 border-t border-border/60">
               <div className="p-3 sm:p-0 rounded-2xl sm:rounded-none bg-slate-100/50 sm:bg-transparent dark:bg-slate-800/30 sm:dark:bg-transparent border border-border/40 sm:border-0">
                 <span className="block text-xl sm:text-2xl lg:text-3xl font-extrabold text-blue-600 dark:text-sky-400">
                   {PERSONAL_INFO.stats.yearsLearning}
@@ -138,8 +138,8 @@ export function HeroSection() {
                   Tech Skills
                 </span>
               </div>
-              <div className="p-3 sm:p-0 rounded-2xl sm:rounded-none bg-slate-100/50 sm:bg-transparent dark:bg-slate-800/30 sm:dark:bg-transparent border border-border/40 sm:border-0">
-                <span className="block text-xl sm:text-2xl lg:text-3xl font-extrabold text-blue-600 dark:text-sky-400 whitespace-nowrap">
+              <div className="p-3 sm:p-0 rounded-2xl sm:rounded-none bg-slate-100/50 sm:bg-transparent dark:bg-slate-800/30 sm:dark:bg-transparent border border-border/40 sm:border-0 overflow-hidden">
+                <span className="block text-lg sm:text-xl lg:text-2xl font-extrabold text-blue-600 dark:text-sky-400 truncate">
                   {PERSONAL_INFO.stats.domainExperience}
                 </span>
                 <span className="text-xs font-medium text-slate-500 dark:text-slate-400">

@@ -7,19 +7,19 @@ import { TIMELINE } from "@/lib/data";
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-24 relative z-10">
+    <section id="experience" className="py-16 sm:py-20 lg:py-24 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-pill text-xs font-semibold text-blue-600 dark:text-sky-400 mb-3">
             <Briefcase className="w-3.5 h-3.5" />
             <span>CAREER & EDUCATION</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
             Professional <span className="text-gradient">Timeline</span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg">
+          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed">
             Procurement operations at Royal Enfield, rigorous B.Sc. Physics education, and structured full-stack engineering.
           </p>
         </div>
@@ -27,9 +27,9 @@ export function ExperienceSection() {
         {/* Timeline Items List */}
         <div className="relative max-w-4xl mx-auto">
           {/* Vertical Connecting Line */}
-          <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 via-sky-400 to-cyan-500 transform -translate-x-1/2 opacity-30" />
+          <div className="absolute left-3 sm:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-600 via-sky-400 to-cyan-500 transform -translate-x-1/2 opacity-30" />
 
-          <div className="space-y-12">
+          <div className="space-y-8 sm:space-y-12">
             {TIMELINE.map((item, idx) => {
               const isEven = idx % 2 === 0;
 
@@ -45,13 +45,13 @@ export function ExperienceSection() {
                   }`}
                 >
                   {/* Glowing Node Marker */}
-                  <div className="absolute left-4 sm:left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-background border-2 border-blue-500 flex items-center justify-center z-10 shadow-lg shadow-blue-500/30">
-                    <div className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-ping" />
+                  <div className="absolute left-3 sm:left-1/2 transform -translate-x-1/2 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-background border-2 border-blue-500 flex items-center justify-center z-10 shadow-lg shadow-blue-500/30">
+                    <div className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-blue-500 animate-ping" />
                   </div>
 
                   {/* Timeline Card Container */}
-                  <div className="w-full sm:w-[calc(50%-2.5rem)] ml-12 sm:ml-0">
-                    <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-border/80 hover:border-blue-500/50 hover:shadow-xl transition-all duration-300">
+                  <div className="w-full sm:w-[calc(50%-2.5rem)] ml-8 sm:ml-0">
+                    <div className="glass-panel p-5 sm:p-8 rounded-3xl border border-border/80 hover:border-blue-500/50 hover:shadow-xl transition-all duration-300">
                       
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                         <span className="px-2.5 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-sky-400 text-[10px] font-bold uppercase tracking-wider">

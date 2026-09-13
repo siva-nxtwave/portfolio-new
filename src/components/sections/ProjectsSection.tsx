@@ -33,32 +33,32 @@ export function ProjectsSection() {
   });
 
   return (
-    <section id="projects" className="py-24 relative z-10 bg-slate-100/40 dark:bg-slate-900/30">
+    <section id="projects" className="py-16 sm:py-20 lg:py-24 relative z-10 bg-slate-100/40 dark:bg-slate-900/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-pill text-xs font-semibold text-blue-600 dark:text-sky-400 mb-3">
             <FolderGit2 className="w-3.5 h-3.5" />
             <span>PORTFOLIO SHOWCASE</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
             Featured <span className="text-gradient">Projects</span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg">
+          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed">
             Hands-on AI-powered applications, cloud deployments, and interactive mobile apps.
           </p>
         </div>
 
         {/* Search & Category Filtering Controls */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 mb-8 sm:mb-12">
           {/* Category Tabs */}
           <div className="flex flex-wrap items-center gap-2">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+                className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs font-semibold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                   filter === cat
                     ? "bg-blue-600 text-white shadow-md shadow-blue-500/20"
                     : "glass-panel border border-border/80 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800"
@@ -202,11 +202,12 @@ export function ProjectsSection() {
                 initial={{ scale: 0.9, y: 20 }}
                 animate={{ scale: 1, y: 0 }}
                 exit={{ scale: 0.9, y: 20 }}
-                className="bg-background border border-border rounded-3xl max-w-3xl w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8 shadow-2xl relative"
+                className="bg-background border border-border rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto p-5 sm:p-8 shadow-2xl relative"
               >
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="absolute top-6 right-6 p-2 rounded-full glass-panel text-slate-500 hover:text-slate-900 dark:hover:text-white"
+                  className="absolute top-4 right-4 sm:top-6 sm:right-6 p-2 rounded-full glass-panel text-slate-500 hover:text-slate-900 dark:hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500"
+                  aria-label="Close case study modal"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -217,7 +218,7 @@ export function ProjectsSection() {
                   </span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-extrabold mb-2 text-slate-900 dark:text-white">{selectedProject.title}</h3>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold mb-2 text-slate-900 dark:text-white pr-10">{selectedProject.title}</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-400 mb-6">{selectedProject.subtitle}</p>
 
                 <div className="space-y-6">

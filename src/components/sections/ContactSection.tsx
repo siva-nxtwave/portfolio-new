@@ -56,7 +56,8 @@ export function ContactSection() {
     setTimeout(() => setCopiedPhone(false), 2000);
   };
 
-  const onSubmit = async (data: ContactFormData) => {
+  const onSubmit = async (_data: ContactFormData) => {
+    void _data;
     setIsSubmitting(true);
     // Simulate server delay
     await new Promise((resolve) => setTimeout(resolve, 1200));
@@ -75,25 +76,25 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-24 relative z-10 bg-slate-100/40 dark:bg-slate-900/30">
+    <section id="contact" className="py-16 sm:py-20 lg:py-24 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-pill text-xs font-semibold text-blue-600 dark:text-sky-400 mb-3">
             <Mail className="w-3.5 h-3.5" />
             <span>LET&apos;S CONNECT</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
             Get In <span className="text-gradient">Touch</span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 text-base sm:text-lg">
+          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base lg:text-lg leading-relaxed">
             Have a software engineering opportunity, full-stack project, or collaboration inquiry? Drop a message!
           </p>
         </div>
 
         {/* Two-Column Contact Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           
           {/* Left Column: Direct Contact Info & Social Dock */}
           <motion.div
@@ -103,7 +104,7 @@ export function ContactSection() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-5 space-y-6"
           >
-            <div className="glass-panel p-6 sm:p-8 rounded-3xl space-y-6 border border-border/80">
+            <div className="glass-panel p-5 sm:p-8 rounded-3xl space-y-6 border border-border/80">
               <h3 className="text-xl font-bold text-slate-900 dark:text-white">Contact Information</h3>
 
               {/* Email item with copy button */}
@@ -224,7 +225,7 @@ export function ContactSection() {
             transition={{ duration: 0.5 }}
             className="lg:col-span-7"
           >
-            <div className="glass-panel p-6 sm:p-8 rounded-3xl relative border border-border/80">
+            <div className="glass-panel p-5 sm:p-8 rounded-3xl relative border border-border/80">
               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                 <span>Send a Direct Message</span>
                 <Sparkles className="w-4 h-4 text-sky-400" />

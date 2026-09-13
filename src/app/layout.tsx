@@ -53,6 +53,15 @@ export const metadata: Metadata = {
       "Software developer with hands-on experience in Python, JavaScript, React, Node.js, and Google Gemini AI.",
     creator: "@karthikeyan_dev",
   },
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({

@@ -72,30 +72,30 @@ export function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState(0);
 
   return (
-    <section id="skills" className="py-24 relative z-10">
+    <section id="skills" className="py-16 sm:py-20 lg:py-24 relative z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-pill text-xs font-semibold text-blue-600 dark:text-sky-400 mb-3">
             <Cpu className="w-3.5 h-3.5" />
             <span>TECHNICAL PROFICIENCY</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-4 text-slate-900 dark:text-white">
             Skills & <span className="text-gradient">Technologies</span>
           </h2>
-          <p className="text-slate-600 dark:text-slate-400 text-base sm:text-lg">
+          <p className="text-slate-600 dark:text-slate-400 text-sm sm:text-base lg:text-lg leading-relaxed">
             Mastering tools across Artificial Intelligence, Web Systems, Cloud Infrastructure, and Developer Productivity.
           </p>
         </div>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
           {SKILL_CATEGORIES.map((cat, idx) => (
             <button
               key={cat.title}
               onClick={() => setActiveCategory(idx)}
-              className={`px-5 py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-300 ${
+              className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                 activeCategory === idx
                   ? "bg-gradient-to-r from-blue-600 via-sky-500 to-cyan-500 text-white shadow-lg shadow-blue-500/25 scale-[1.02]"
                   : "glass-panel border border-border/80 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
@@ -107,7 +107,7 @@ export function SkillsSection() {
         </div>
 
         {/* Category Description */}
-        <p className="text-center text-xs font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-8 font-medium">
+        <p className="text-center text-xs font-mono uppercase tracking-widest text-slate-500 dark:text-slate-400 mb-8 font-medium max-w-xl mx-auto px-2">
           {SKILL_CATEGORIES[activeCategory].description}
         </p>
 
@@ -122,7 +122,7 @@ export function SkillsSection() {
           {SKILL_CATEGORIES[activeCategory].skills.map((skill) => (
             <div
               key={skill.name}
-              className="group glass-panel p-6 rounded-3xl relative border border-border/80 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 flex flex-col justify-between"
+              className="group glass-panel p-5 sm:p-6 rounded-3xl relative border border-border/80 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
